@@ -1,0 +1,13 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.biZati{
+    display: flex;
+}
+
+.sidebar{
+     width: 25%; 
+     background-color: greenyellow;
+     height: 100vh
+}
