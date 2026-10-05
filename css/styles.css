@@ -1,13 +1,99 @@
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-.biZati{
+.biZati {
     display: flex;
 }
 
-.sidebar{
-     width: 25%; 
-     background-color: greenyellow;
-     height: 100vh
+.argazkia {
+    width: 120px;
+    height: 75px;
+    border-radius: 4px;
+    border: solid white;
 }
+
+.argazkiaZerntratu {
+    display: grid;
+    justify-items: center;
+}
+
+.backArgazkia {
+    background-image: url("../img/new_york.jpg");
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 250px;
+    opacity: 0.5;
+    border-radius: 4px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 25%;
+    background-color: rgb(198, 198, 255);
+    height: 100%;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.sidebarTituluak {
+    color: rgb(22, 22, 224);
+}
+
+.sidebarSubtituluak {
+    color: rgb(224, 22, 89);
+}
+
+.konpetentziak {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 10px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #298bc4;
+    border-radius: 10px;
+}
+
+.teknikakDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teknikak {
+    background-color: white;
+    border-radius: 20px;
+    border: solid rgba(13, 13, 219, 0.411) 1px;
+    color: rgb(22, 22, 224);
+    font-weight: bold;
+    padding: 10px;
+}
+
+.profila {
+    background-color: rgba(13, 13, 219, 0.67);
+    color: white;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.tituluak {
+    color: rgb(9, 9, 237);
+}
+
+.lineaTop {
+    border-top: solid grey 1px;
+}
+
+/* .lineaLeft{
+    border-left: solid grey 2px;
+} */
