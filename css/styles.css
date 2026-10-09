@@ -1,99 +1,523 @@
+/* Aldagaiak */
+:root {
+    --gorria: #c1121f;
+    --urdinaIluna: #0b1f3a;
+    --urdina: #1769aa;
+    --testua: #263746;
+    --grisa: #71808c;
+    --lerroa: #d6e1e8;
+    --zuria: #ffffff;
+
+    --radius-txikia: 0.35rem;
+    --radius-ertaina: 0.65rem;
+    --radius-handia: 1rem;
+
+    --espazio-txikia: 0.5rem;
+    --espazio-ertaina: 1rem;
+    --espazio-handia: 1.5rem;
+    --espazio-handiagoa: 2rem;
+
+    --letra-txikia: 0.70rem;
+    --letra-ertaina: 0.80rem;
+    --letra-handia: 1rem;
+}
+
+/* Orokorrak */
 * {
     box-sizing: border-box;
 }
 
-.biZati {
-    display: flex;
+body {
+    margin: 0;
+    color: var(--testua);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--letra-ertaina);
+    line-height: 1.5;
 }
 
-.argazkia {
-    width: 120px;
-    height: 75px;
-    border-radius: 4px;
-    border: solid white;
-}
-
-.argazkiaZerntratu {
+.cv {
+    width: min(calc(100% - 2rem), 75rem);
+    margin: 2rem auto;
     display: grid;
-    justify-items: center;
-}
-
-.backArgazkia {
-    background-image: url("../img/new_york.jpg");
-    background-repeat: no-repeat;
-    width: 500px;
-    height: 250px;
-    opacity: 0.5;
-    border-radius: 4px;
+    grid-template-columns: minmax(15rem, 25%) 1fr;
+    background-color: var(--zuria);
+    box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-ertaina);
+    overflow: hidden;
 }
 
 /* Sidebar */
-
 .sidebar {
-    width: 25%;
-    background-color: rgb(198, 198, 255);
-    height: 100%;
-    border-radius: 4px;
-    padding: 20px;
+    background-color: #e5edf4;
+    padding: var(--espazio-handia);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espazio-ertaina);
+}
+
+/* Argazkia */
+.argazkiaZentratu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.argazkia {
+    width: min(100%, 12rem);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-ertaina);
+    border: 0.2rem solid var(--zuria);
+    box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.12);
+}
+
+/* Sections Sidebar */
+.sidebarSection {
+    padding-bottom: var(--espazio-ertaina);
+    border-bottom: 0.0625rem solid var(--testua);
 }
 
 .sidebarTituluak {
-    color: rgb(22, 22, 224);
+    margin: 0 0 0.8rem;
+    color: var(--urdina);
+    font-size: var(--letra-txikia);
+    letter-spacing: 0.08rem;
+    font-weight: 800;
 }
 
 .sidebarSubtituluak {
-    color: rgb(224, 22, 89);
+    margin: 0.7rem 0 0.1rem;
+    color: var(--gorria);
+    font-size: var(--letra-txikia);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.sidebar p {
+    margin: 0.1rem 0;
+    font-size: var(--letra-ertaina);
+}
+
+/* Konpetentziak */
+.skill {
+    margin-bottom: 0.75rem;
 }
 
 .konpetentziak {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--espazio-txikia);
 }
 
-.progress-bar {
-    width: 200px;
-    height: 10px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
+.konpetentziak span {
+    font-size: var(--letra-ertaina);
+}
+
+.konpetentziak span:last-child {
+    color: var(--urdina);
+    font-weight: bold;
+}
+
+.progressBar {
+    width: 100%;
+    height: 0.3rem;
+    margin-top: 0.25rem;
+    background-color: #b5c2ca;
+    border-radius: 10rem;
     overflow: hidden;
 }
 
 .progress {
     height: 100%;
-    background-color: #298bc4;
-    border-radius: 10px;
+    background: linear-gradient(90deg,
+            var(--urdina),
+            var(--gorria));
+    border-radius: 10rem;
 }
 
+.progress100 {
+    width: 100%;
+}
+
+.progress80 {
+    width: 80%;
+}
+
+/* Teknikak */
 .teknikakDiv {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
 .teknikak {
-    background-color: white;
-    border-radius: 20px;
-    border: solid rgba(13, 13, 219, 0.411) 1px;
-    color: rgb(22, 22, 224);
+    padding: 0.3rem 0.55rem;
+    background-color: var(--zuria);
+    border: 0.0625rem solid #a9c7d8;
+    border-radius: 10rem;
+    color: var(--urdina);
+    font-size: var(--letra-txikia);
     font-weight: bold;
-    padding: 10px;
 }
 
-.profila {
-    background-color: rgba(13, 13, 219, 0.67);
-    color: white;
-    display: grid;
-    grid-auto-flow: column;
+/* Kuota */
+.quote {
+    margin-top: auto;
+    padding: var(--espazio-ertaina);
+    color: var(--zuria);
+    background: linear-gradient(135deg,
+            var(--urdinaIluna),
+            var(--gorria));
+    border-radius: var(--radius-ertaina);
+}
+
+.quote p {
+    margin: 0;
+    font-size: var(--letra-txikia);
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: var(--letra-txikia);
+}
+
+/* CV */
+.contenido {
+    min-width: 0;
+    background-color: var(--zuria);
+}
+
+/* Header */
+.header {
+    position: relative;
+    min-height: 13rem;
+    display: flex;
     align-items: center;
+    padding: var(--espazio-handiagoa);
+    overflow: hidden;
+    background-image:
+        linear-gradient(90deg,
+            rgba(220, 235, 245, 0.95),
+            rgba(235, 245, 251, 0.75)),
+        url("../img/new_york.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.headerContent {
+    position: relative;
+    z-index: 1;
+    max-width: 45rem;
+}
+
+.cvTitulua {
+    margin: 0 0 0.2rem;
+    color: var(--gorria);
+    font-size: var(--letra-txikia);
+    font-weight: bold;
+    letter-spacing: 0.07rem;
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--urdina);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1;
+}
+
+.subtitulua {
+    margin: 0.6rem 0;
+    color: var(--kolore-testua);
+    font-size: var(--letra-ertaina);
+    font-weight: bold;
+}
+
+.datosHeader {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--grisa);
+    font-size: var(--letra-txikia);
+}
+
+/* Profila */
+.profila {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.8fr) 1.5fr;
+    gap: var(--espazio-handiagoa);
+    padding: var(--espazio-handia) var(--espazio-handiagoa);
+    color: var(--zuria);
+    background: linear-gradient(110deg,
+            var(--gorria),
+            var(--urdina));
+}
+
+.profilaLabel {
+    margin: 0 0 0.25rem;
+    font-size: var(--letra-txikia);
+    letter-spacing: 0.08rem;
+}
+
+.profila h2 {
+    margin: 0;
+    max-width: 20rem;
+    font-size: 1.15rem;
+    line-height: 1.2;
+}
+
+.profilaRight p {
+    margin: 0;
+    font-size: var(--letra-txikia);
+}
+
+/* Sections Main */
+.contentSection {
+    padding: 0 max(var(--espazio-ertaina), var(--espazio-handiagoa));
+    margin-top: var(--espazio-handiagoa);
 }
 
 .tituluak {
-    color: rgb(9, 9, 237);
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 0.0625rem solid var(--lerroa);
+
+    color: var(--urdina);
+    font-size: var(--letra-ertaina);
+    letter-spacing: 0.02rem;
 }
 
-.lineaTop {
-    border-top: solid grey 1px;
+/* Esperientzia */
+.esperientziaList {
+    display: grid;
+    gap: 0;
 }
 
-/* .lineaLeft{
-    border-left: solid grey 2px;
-} */
+.esperientzia {
+    position: relative;
+    padding: 0.7rem 0 1rem 1rem;
+    border-left: 0.15rem solid var(--lerroa);
+}
+
+.esperientziaTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--espazio-ertaina);
+}
+
+.esperientzia h3 {
+    margin: 0;
+    color: var(--gorria);
+    font-size: var(--letra-txikia);
+}
+
+.esperientzia p {
+    margin: 0.15rem 0;
+    color: var(--grisa);
+    font-size: var(--letra-txikia);
+}
+
+.esperientzia ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1rem;
+}
+
+.esperientzia li {
+    margin-bottom: 0.15rem;
+    font-size: var(--letra-ertaina);
+}
+
+.lana {
+    flex-shrink: 0;
+    padding: 0.2rem 0.5rem;
+    color: var(--urdina);
+    border-radius: 10rem;
+    font-size: var(--letra-txikia);
+    font-weight: bold;
+}
+
+.lanaBerdea {
+    background-color: #e2f5ed;
+    color: #21805e;
+}
+
+/* Prestakunta */
+.prestakuntaGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+            minmax(min(100%, 10rem), 1fr));
+    gap: var(--espazio-ertaina);
+}
+
+.prestakuntaCard {
+    min-height: 8rem;
+    padding: var(--espazio-ertaina);
+    background: linear-gradient(145deg,
+            #ffffff,
+            #f2f7fa);
+    border: 0.0625rem solid var(--lerroa);
+    border-radius: var(--radius-ertaina);
+}
+
+.zbk {
+    color: var(--gorria);
+    font-size: var(--letra-txikia);
+    font-weight: bold;
+}
+
+.prestakuntaCard h3 {
+    margin: 0.4rem 0 0.25rem;
+    color: var(--urdina);
+    font-size: var(--letra-txikia);
+}
+
+.prestakuntaCard p {
+    margin: 0;
+    color: var(--grisa);
+    font-size: var(--letra-txikia);
+}
+
+.prestakuntaCard small {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--kolore-testua);
+    font-size: var(--letra-txikia);
+}
+
+/* Beheko Grid */
+.bottomGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--espazio-handiagoa);
+    margin-bottom: var(--espazio-handiagoa);
+}
+
+/* Lorpenak */
+.lorpenak {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.lorpenak li {
+    margin-bottom: 0.35rem;
+    font-size: var(--letra-txikia);
+}
+
+/* Gaitasunak */
+.gaitasunak {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.gaitasunak span {
+    padding: 0.35rem 0.65rem;
+    border: 0.0625rem solid #b7c9d6;
+    border-radius: 10rem;
+    color: var(--urdina);
+    background-color: #f3f7fa;
+    font-size: var(--letra-txikia);
+    font-weight: bold;
+}
+
+/* Taula */
+.taulaContainer {
+    width: max(100%, 0%);
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.taulaProiektuak {
+    width: 100%;
+    border-collapse: collapse;
+    border: 0.0625rem solid var(--lerroa);
+    border-radius: var(--radius-ertaina);
+    overflow: hidden;
+}
+
+.taulaProiektuak th {
+    padding: 0.75rem 1rem;
+    background: linear-gradient(110deg,
+            var(--gorria),
+            var(--urdina));
+    color: var(--zuria);
+    text-align: left;
+    font-size: var(--letra-txikia);
+    letter-spacing: 0.05rem;
+}
+
+.taulaProiektuak td {
+    padding: 0.75rem 1rem;
+    border-top: 0.0625rem solid var(--lerroa);
+    font-size: var(--letra-txikia);
+}
+
+.emaitza {
+    font-weight: bold;
+    color: var(--urdinaIluna);
+}
+
+/* Responsive Mobile - Media Query */
+@media (max-width: 40rem) {
+
+    body {
+        font-size: var(--letra-txikia);
+    }
+
+    .cv {
+        width: 100%;
+        margin: 0;
+        display: block;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        padding: 1.2rem;
+    }
+
+    .argazkia {
+        width: 7rem;
+    }
+
+    .header {
+        min-height: 12rem;
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .datosHeader {
+        gap: 0.5rem;
+    }
+
+    .profila {
+        padding: 1.3rem;
+    }
+
+    .profilaRight {
+        grid-template-columns: 1fr;
+    }
+
+    .contentSection {
+        padding: 0 1.3rem;
+    }
+
+    .esperientziaTitle {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .prestakuntaGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bottomGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
